@@ -1,0 +1,7 @@
+<h2>My Favourite Orgs</h2>
+
+<ul>
+    {{#each model as |org|}}
+        <li><span {{action 'addToItems' org}}>[ Favorite ]</span> {{link-to org.id 'org' org.id}}</li>
+    {{/each}}
+</ul>
