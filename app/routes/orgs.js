@@ -14,6 +14,16 @@ export default Route.extend({
             {id: 'ember-cli', name: 'Ember CLI'},
             {id: 'microsoft', name: 'Microsoft'}
         ]
+
+        // Request orgs from github api
+        // return $.get(`https://api.github.com/organizations`).then(rawOrgs => {
+        //     return rawOrgs.map(rawOrg => {
+        //         rawOrg.oldId = rawOrg.id;
+        //         rawOrg.id = rawOrg.login;
+        //         return rawOrg;
+
+        //     })
+        // })
     },
     actions: {
         addToItems(org) {
