@@ -28,6 +28,9 @@ export default Route.extend({
     actions: {
         addToItems(org) {
             this.get('favorites').favoriteItem(org);
+        },
+        linksToggle(){
+            console.log("toggled");
         }
     }
 });

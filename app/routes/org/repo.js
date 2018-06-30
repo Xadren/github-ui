@@ -6,7 +6,7 @@ export default Route.extend({
         return $.get(`https://api.github.com/repos/${org.login}/${params.repoid}`).then(rawRepo => {
             rawRepo.oldId = rawRepo.id;
             rawRepo.id = rawRepo.name;
-
+            
             return rawRepo;
         })
     }

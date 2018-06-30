@@ -2,6 +2,18 @@
 
 <ul>
     {{#each model as |org|}}
-        <li><span {{action 'addToItems' org}}>[ Favorite ]</span> {{link-to org.id 'org' org.id}}</li>
+        {{github-org
+            org=org
+            on-fav-clicked="addToItems"
+        }}
     {{/each}}
 </ul>
+
+{{social-info
+    name="Alex Griffiths"
+    twitter="XanderAG"
+    github="Xadren"    
+    on-links-toggle="linksToggle"
+}}
+
+{{outlet}}
