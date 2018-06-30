@@ -12,12 +12,14 @@ Router.map(function() {
   this.route('orgs'); // /orgs
 
   // A single org
-  this.route('org', {path: 'org/:id'}, function() { // /org/ember -> redirects to /org/ember/repos
+  this.route('org', {path: 'org/:id'}, function() {
+    // /org/ember -> redirects to /org/ember/repos
     this.route('repos'); // List of org repos
     this.route('repo', {path: '/:repoid'}, function() {  // /org/ember/emberjs -> redirects to /org/ember/ember.js/issues
       this.route('contributors');
       this.route('issues');
-    }); 
+    });
+    this.route('notfound');
   });
   this.route('notfound', {path: '*path'});
 });

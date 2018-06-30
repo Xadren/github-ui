@@ -7,5 +7,14 @@ export default Route.extend({
             rawOrg.id = rawOrg.name;
             return rawOrg;
         })
+    },
+    actions: {
+        error(error){
+            if(error.status === 404){
+                this.intermediateTransitionTo('org.notfound');
+            } else {
+                return true; // bubble up to the application error template.
+            }
+        }
     }
 });
